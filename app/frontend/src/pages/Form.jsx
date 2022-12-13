@@ -1,6 +1,6 @@
 import { Button, TextField, Paper } from "@mui/material";
 import { useForm } from "react-hook-form";
-import api from "../../services/api";
+import api from "../services/api";
 
 export default function Form({ todoHandler, list, setList }) {
   const { register, handleSubmit, reset } = useForm();

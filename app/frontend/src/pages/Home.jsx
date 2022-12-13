@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import "../pages/style.scss";
 import Form from "./Form";
-import api from "../../services/api";
+import api from "../services/api";
 
 import { Link } from "react-router-dom";
 
