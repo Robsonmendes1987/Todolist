@@ -3,6 +3,6 @@ const userController = require('../controller/user.controller')
 
 const route = express.Router()
 
-route.post('/', userController.creatUser)
+route.post('/register', userController.creatUser)
 
 module.exports = route;
