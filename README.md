@@ -35,7 +35,7 @@ Para conseguir executar os comandos do abaixo também é necessário que seu sis
 git clone git@github.com:robsonmendes1987/Todolist.git
 
 
-### 2 - Na raíz do projeto, suba os containers do frontend (`frontend_todo`), do backend (`backend_todo`) e o banco de dados (`todo-list-db`) com o comando:
+### 2 - Na raíz do projeto, entre na pasta app e suba os containers do frontend (`frontend_todo`), do backend (`backend_todo`) e o banco de dados (`todo-list-db`) com o comando:
 
     docker-compose up -d --build
 
