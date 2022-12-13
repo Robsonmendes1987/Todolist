@@ -37,7 +37,7 @@ git clone git@github.com:robsonmendes1987/Todolist.git
 
 ### 2 - Na raíz do projeto, suba os containers do frontend (`frontend_todo`), do backend (`backend_todo`) e o banco de dados (`todo-list-db`) com o comando:
 
-    npm run compose:up
+    docker-compose up -d --build
 
 Os containers estão mapeados nas seguintes portas:
 
@@ -47,7 +47,7 @@ Os containers estão mapeados nas seguintes portas:
 
 Para parar os containers, na pasta raiz do projeto execute o comando:
 
-    npm run compose:down
+    docker-compose down
 
 </details>
 <br />
