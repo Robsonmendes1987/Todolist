@@ -48,6 +48,10 @@ Os containers estão mapeados nas seguintes portas:
 Para parar os containers, na pasta raiz do projeto execute o comando:
 
     docker-compose down
+    
+### 3 - Acesse a aplicação:
+
+    localhost:3000 
 
 </details>
 <br />
