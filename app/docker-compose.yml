@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  frontend:
+    container_name: frontend_todo
+    build: ./frontend
+    volumes:
+      - ./frontend/src:/app-frontend/src
+    ports:
+      - 3000:3000
+    platform: linux/x86_64
+    working_dir: /app-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "lsof", "-t", "-i:3000" ]
+      timeout: 10s
+      retries: 5
+
+  backend:
+    container_name: backend_todo
+    build: ./backend
+    ports:
+      - 3001:3001
+    platform: linux/x86_64
+    working_dir: /app-backend
+    volumes:
+      - ./backend/src:/app-backend/src
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - APP_PORT=3001
+      - JWT_SECRET=jwt_secret
+      - DB_USER=root
+      - DB_PASS=password
+      - DB_HOST=db
+      - DB_PORT=3306
+    healthcheck:
+      test: [ "CMD", "lsof", "-t", "-i:3001" ]
+      timeout: 10s
+      retries: 5
+  db:
+    container_name: todo-list-db
+    image: mysql:8.0.29
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 10s
+      retries: 5

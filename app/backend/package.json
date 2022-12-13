@@ -1,0 +1,27 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon .",
+    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "2": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "10.0",
+    "express": "4.17",
+    "joi": "^17.7.0",
+    "mysql": "^2.18.1",
+    "mysql2": "2.3",
+    "sequelize": "6.3"
+  },
+  "devDependencies": {
+    "nodemon": "2.0",
+    "sequelize-cli": "6.2"
+  }
+}
